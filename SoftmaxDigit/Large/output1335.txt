@@ -1,0 +1,28 @@
+{'batch_size': [50,
+                30,
+                10],
+ 'eta': [1.4,
+         1.0,
+         0.8,
+         0.6],
+ 'eta_frac': [0.18,
+              0.2,
+              0.22],
+ 'etadrop': [0.85,
+             0.75,
+             0.65],
+ 'lambda_': [0.015,
+             0.01,
+             0.05,
+             0.001,
+             1e-05],
+ 'maxiter': [10000]}
+check1
+Fitting 5 folds for each of 1 candidates, totalling 5 fits
+Grid scores on development set:
+Best parameters set found on development set:
+
+{'etadrop': 0.65, 'batch_size': 30, 'eta_frac': 0.22, 'maxiter': 10000, 'lambda_': 0.015, 'eta': 1.4} 
+
+[3 4 6 7 5 3 0 7 2 2 8 1 5 5 8 4 9 0 7 4 5 9 2 9 0 9 2 2 5 9]
+[3 4 6 7 9 3 0 7 2 3 8 1 5 5 8 5 8 0 9 9 7 9 2 9 0 7 2 2 5 9]

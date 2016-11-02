@@ -169,15 +169,21 @@ print(Yval.shape)
 # In[14]:
 
 # -- training options; these are suggestions, feel free to experiment
-trainopt = {
-    'eta': 1.5,   # initial learning rate
-    'maxiter': 10000,   # max number of iterations (updates) of SGD
-    'display_iter': 2000,  # display batch loss every display_iter updates
-    'batch_size': 3,  
-    'etadrop': .5, # when dropping eta, multiply it by this number (e.g., .5 means halve it)
-    'eta_frac': .5  # drop eta every eta_frac fraction of the max iterations
+# trainopt = {
+#     'eta': 1.5,   # initial learning rate
+#     'maxiter': 10000,   # max number of iterations (updates) of SGD
+#     'display_iter': 2000,  # display batch loss every display_iter updates
+#     'batch_size': 3,  
+#     'etadrop': .5, # when dropping eta, multiply it by this number (e.g., .5 means halve it)
+#     'eta_frac': .5  # drop eta every eta_frac fraction of the max iterations
                     # so if eta_frac is .2, and maxiter is 10000, drop eta every 2000 iterations
-}
+
+trainopt = {'batch_size': 50,
+ 'eta': 1.0,
+ 'eta_frac': 0.18,
+ 'etadrop': 0.75,
+ 'maxiter': 10000,
+ 'display_iter': 2000}
 
 NFEATURES = Xsmall.shape[1]
 
@@ -187,7 +193,7 @@ random_init = seed.normal(scale=0.01, size=(NFEATURES,CLASSES)) # -- with random
 model = { 'weight': random_init, 'bias': np.zeros(CLASSES) }
 
 # set the (initial?) set of lambda values to explore
-lambdas = np.array([0.05, 0.1, 0.15])
+lambdas = np.array([0.05])
 
 # we will maintain a record of models trained for different values of lambda
 # these will be indexed directly by lambda value itself
@@ -235,9 +241,6 @@ print("Best small train model val err:", best_small_trained_val_err)
 print("Best small train model lambda:", best_small_trained_lambda)
 print("Best large train model val err:", best_large_trained_val_err)
 print("Best large train model lambda:", best_large_trained_lambda)
-
-
-# In[11]:
 
 # Generate a Kaggle submission file using `model`
 # for model trained on small_train

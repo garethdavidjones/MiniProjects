@@ -1,0 +1,78 @@
+{'batch_size': [50,
+                30,
+                10],
+ 'eta': [1.4,
+         1.0,
+         0.8,
+         0.6],
+ 'eta_frac': [0.18,
+              0.2,
+              0.22],
+ 'etadrop': [0.85,
+             0.75,
+             0.65],
+ 'lambda_': [0.015,
+             0.01,
+             0.05,
+             0.001,
+             1e-05],
+ 'maxiter': [10000]}
+check1
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+[CV] maxiter=10000, batch_size=10, eta_frac=0.2, eta=0.8, lambda_=0.01, etadrop=0.75 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.2, eta=0.8, lambda_=0.01, etadrop=0.75 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.18, eta=1.4, lambda_=0.001, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.22, eta=0.6, lambda_=1e-05, etadrop=0.85 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.2, eta=0.8, lambda_=0.01, etadrop=0.75 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.2, eta=0.8, lambda_=0.01, etadrop=0.75 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.18, eta=0.6, lambda_=0.01, etadrop=0.65 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.18, eta=0.6, lambda_=0.01, etadrop=0.65 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.2, eta=0.8, lambda_=0.01, etadrop=0.75 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.2, eta=0.8, lambda_=0.01, etadrop=0.75 -   0.0s
+[CV] maxiter=10000, batch_size=10, eta_frac=0.18, eta=0.6, lambda_=0.01, etadrop=0.65 
+[CV]  maxiter=10000, batch_size=10, eta_frac=0.18, eta=0.6, lambda_=0.01, etadrop=0.65 -   0.0s
+[CV] maxiter=10000, batch_size=50, eta_frac=0.18, eta=0.6, lambda_=0.015, etadrop=0.75 
+[CV]  maxiter=10000, batch_size=50, eta_frac=0.18, eta=0.6, lambda_=0.015, etadrop=0.75 -   0.0s
+Grid scores on development set:
+Best parameters set found on development set:
+
+{'batch_size': 10,
+ 'eta': 0.6,
+ 'eta_frac': 0.18,
+ 'etadrop': 0.65,
+ 'lambda_': 0.01,
+ 'maxiter': 10000}
+Accuracy_Score
+0.8195
+             precision    recall  f1-score   support
+
+          0       0.90      0.93      0.91       187
+          1       0.83      0.95      0.89       223
+          2       0.84      0.77      0.80       210
+          3       0.74      0.80      0.77       183
+          4       0.81      0.84      0.82       193
+          5       0.78      0.69      0.73       172
+          6       0.88      0.90      0.89       217
+          7       0.85      0.83      0.84       233
+          8       0.83      0.73      0.78       196
+          9       0.72      0.72      0.72       186
+
+avg / total       0.82      0.82      0.82      2000
+
+Saved: submission-small.csv

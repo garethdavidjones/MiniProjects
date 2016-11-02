@@ -1,0 +1,60 @@
+{'batch_size': [50,
+                30,
+                10],
+ 'eta': [1.4,
+         1.0,
+         0.8,
+         0.6],
+ 'eta_frac': [0.18,
+              0.2,
+              0.22],
+ 'etadrop': [0.85,
+             0.75,
+             0.65],
+ 'lambda_': [0.015,
+             0.01,
+             0.05,
+             0.001,
+             1e-05],
+ 'maxiter': [10000]}
+check1
+Fitting 5 folds for each of 5 candidates, totalling 25 fits
+[CV] lambda_=0.05, etadrop=0.85, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 
+[CV]  lambda_=0.05, etadrop=0.85, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 -   0.0s
+[CV] lambda_=0.05, etadrop=0.85, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 
+[CV]  lambda_=0.05, etadrop=0.85, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 -   0.0s
+[CV] lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 
+[CV]  lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 -   0.0s
+[CV] lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 
+[CV]  lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 -   0.0s
+[CV] lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 
+[CV]  lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 -   0.0s
+[CV] lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 
+[CV]  lambda_=0.015, etadrop=0.75, eta=0.8, maxiter=10000, batch_size=30, eta_frac=0.18 -   0.0s
+Grid scores on development set:
+Best parameters set found on development set:
+
+{'batch_size': 30,
+ 'eta': 0.8,
+ 'eta_frac': 0.18,
+ 'etadrop': 0.75,
+ 'lambda_': 0.015,
+ 'maxiter': 10000}
+Accuracy_Score
+0.816
+             precision    recall  f1-score   support
+
+          0       0.90      0.93      0.91       187
+          1       0.79      0.96      0.86       223
+          2       0.85      0.76      0.80       210
+          3       0.73      0.79      0.76       183
+          4       0.82      0.83      0.83       193
+          5       0.78      0.66      0.71       172
+          6       0.89      0.91      0.90       217
+          7       0.83      0.85      0.84       233
+          8       0.85      0.70      0.77       196
+          9       0.72      0.72      0.72       186
+
+avg / total       0.82      0.82      0.81      2000
+
+Saved: submission-small.csv
