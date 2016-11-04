@@ -1,10 +1,17 @@
-# coding: utf-8
-
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
 
 class softmaxModel(BaseEstimator, ClassifierMixin):  
-    """An example of classifier"""
+    """
+    My implementation of the Softmax Model
+    
+    The object inherits sklearns base classifier and estimator modules. This in itself does not
+    add any functionality, but allows for opperability with some sklearn modules such as GridSearchCV
+    
+    The code that prodcues the classifier is nearly identical to the code that was in the Jupyter Notebook. The few things
+    I did change were done to remove unecessary printing and the like. A few structual and name
+    changes were also undertaken.
+    """
 
 
     def __init__(self, eta=2, maxiter=10000, batch_size=20, etadrop=0.5, eta_frac=0.2, lambda_=0.001):
@@ -94,6 +101,5 @@ class softmaxModel(BaseEstimator, ClassifierMixin):
         grad_W = np.dot(X.T, scores)
         grad_b = np.sum(scores, axis=0, keepdims=True) 
 
-        weight += -eta * (grad_W + (self.lambda_ * weight))
+        weight += -eta * (grad_W + (self.lambda_ * weight.sum()))
         bias += -eta * grad_b[0]
-

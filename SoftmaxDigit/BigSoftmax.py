@@ -39,7 +39,6 @@ bigOpt = {
 
 pprint.pprint(bigOpt, width=1)
 
-
 gs = RandomizedSearchCV(softmaxModel(), bigOpt, cv=5, n_jobs=-1, 
     verbose=1, n_iter=144)
 gs.fit(Xlarge, Ylarge)
@@ -50,10 +49,13 @@ y_true, y_pred = Yval.argmax(-1), gs.predict(Xval)
 print("\nAccuracy_Score")
 print(accuracy_score(y_true, y_pred))
 print(classification_report(y_true, y_pred))
+
+print("\n Confusion Matrix\n")
+print(confusion_matrix(y_true, y_pred))
+
 # Test on custom softmax
 # Kaggle 
 kagglePrediction = gs.predict(kaggleX)
-print(kagglePrediction[:50])
 # Save results
 save_submission('submission-large.csv',  kagglePrediction)
 

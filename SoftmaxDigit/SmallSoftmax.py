@@ -1,9 +1,11 @@
 # coding: utf-8
 
 from utils import save_submission,load_data
+# SmallSoftmax.py
+
 import numpy as np
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
 import datetime
 import sys
 from softmaxSKL import softmaxModel
@@ -26,7 +28,6 @@ Xsmall = Xsmall - Xsmall.mean(0)
 Xval = Xval - Xval.mean(0)
 kaggleX = kaggleX - kaggleX.mean(0)
 
-
 smallOpt = {
     'eta': [2, 1.5, 1],   # initial learning rate
     'maxiter': [10000],  # max number of iterations (updates) of SGD
@@ -35,7 +36,6 @@ smallOpt = {
     'eta_frac': [0.8, 0.7],  # drop eta every eta_frac fraction of the max iterations
     'lambda_' : [0.1, 0.05, .025]                   # so if eta_frac is .2, and maxiter is 10000, drop eta every 2000 iterations
 }
-
 
 pprint.pprint(smallOpt, width=1)
 
@@ -51,6 +51,8 @@ print("\nAccuracy_Score")
 print(accuracy_score(y_true, y_pred))
 print(classification_report(y_true, y_pred))
 
+print("\n Confusion Matrix")
+print(confusion_matrix(y_true, y_pred))
 # Test on custom softmax
 # Kaggle 
 kagglePrediction = gs.predict(kaggleX)
